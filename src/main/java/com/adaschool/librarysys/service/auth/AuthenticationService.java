@@ -38,13 +38,6 @@ public class AuthenticationService {
     }
 
     public User login(UserRequestLogin userRequestLogin) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(
-                        userRequestLogin.getUsername(),
-                        userRequestLogin.getPassword()
-                )
-        );
-
         return userRepository.findUserByUsername(userRequestLogin.getUsername())
                 .orElseThrow(() -> new EntityNotFoundException("error authenticating user, could not find user"));
     }

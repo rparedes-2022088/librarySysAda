@@ -60,7 +60,7 @@ public class UserRepositoryPost implements UserRepository {
 
     @Override
     public Optional<User> findUserByUsername(String username) {
-        Optional<UserPost> UserPost = userRepositorySql.findByUsername(username);
+        Optional<UserPost> UserPost = userRepositorySql.findUserByUsername(username);
         return UserPost.map(userCaster::userPostgresToUser);
     }
 }
