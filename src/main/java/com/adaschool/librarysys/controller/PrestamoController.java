@@ -17,8 +17,9 @@ import java.util.Map;
 public class PrestamoController {
     private final PrestamoService loanService;
     
-    @PostMapping("/{idBook}")
-    public ResponseEntity<Prestamo> createLoan(@PathVariable String idBook, @RequestBody Prestamo loan) {
+    @PostMapping
+    public ResponseEntity<Prestamo> createLoan(@RequestBody Prestamo loan) {
+        String idBook = "1";
         Prestamo newLoan = loanService.createLoan(idBook, loan);
         return new ResponseEntity<>(newLoan, HttpStatus.CREATED);
     }

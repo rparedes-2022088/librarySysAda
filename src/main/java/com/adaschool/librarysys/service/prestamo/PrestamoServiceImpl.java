@@ -24,11 +24,9 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public Prestamo createLoan(String idBook, Prestamo prestamo) {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String idUser = ((User) userDetails).getId();
-        prestamo.setIdUsuario(idUser);
-        prestamo.setIdLibro(idBook);
-        validateIdFormat(idBook);
+        prestamo.setIdUsuario(prestamo.getIdUsuario());
+        prestamo.setIdLibro(prestamo.getIdLibro());
+        validateIdFormat(prestamo.getIdLibro());
         return loanRepository.createLoan(prestamo);
     }
 

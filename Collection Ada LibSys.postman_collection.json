@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "89c15432-77a6-4b21-a9bd-7346c48a902e",
+		"name": "Collection Ada LibSys",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37313471"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Douglas\", \"username\":\"dalvarado\", \"email\":\"dalvarado@gmail.com\", \"password\":\"123\",\"rol\":\"admin\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/auth/signup"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/user/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/user/2"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"dalvarado\", \"password\":\"123\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"title\":\"Libro buenisimo 2\", \"author\":\"Ruben Paredes\", \"isbn\":\"113231311122132\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/book/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/book/1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/book/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/book/1"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/loan/1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idLibro\":2, \"idUsuario\":\"2\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/loan"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/loan",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/loan"
+			},
+			"response": []
+		}
+	]
+}
