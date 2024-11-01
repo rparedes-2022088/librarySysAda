@@ -37,8 +37,6 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public Prestamo findLoanById(String id) {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String idUser = ((User) userDetails).getId();
         validateIdFormat(id);
         return loanRepository.findLoanById(id)
                 .orElseThrow(() -> new EntityNotFoundException(String.format(LOAN_NOT_FOUND)));
@@ -46,8 +44,6 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public Prestamo updateLoan(String id, Prestamo prestamo) {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String idUser = ((User) userDetails).getId();
         validateIdFormat(id);
         Prestamo existingLoan = loanRepository.findLoanById(id)
                 .orElseThrow(() -> new EntityNotFoundException(String.format(LOAN_NOT_FOUND)));
@@ -56,8 +52,6 @@ public class PrestamoServiceImpl implements PrestamoService {
 
     @Override
     public void deleteLoan(String id) {
-        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String idUser = ((User) userDetails).getId();
         validateIdFormat(id);
         loanRepository.findLoanById(id)
                 .orElseThrow(() -> new EntityNotFoundException(String.format(LOAN_NOT_FOUND)));

@@ -20,6 +20,7 @@ public class PrestamoCaster {
     
     public Prestamo loanPostgresToLoan(PrestamoPost prestamoPost) {
         Prestamo prestamo = new Prestamo();
+        prestamo.setId(String.valueOf(prestamoPost.getId()));
         prestamo.setIdUsuario(String.valueOf(prestamoPost.getIdUsuario()));
         prestamo.setIdLibro(String.valueOf(prestamoPost.getIdLibro()));
         return prestamo;
@@ -35,6 +36,7 @@ public class PrestamoCaster {
     
     public Prestamo loanMongoToLoan(PrestamoMongo prestamoMongo) {
         Prestamo prestamo = new Prestamo();
+        prestamo.setId(prestamoMongo.getId());
         prestamo.setIdUsuario(prestamoMongo.getIdUsuario());
         prestamo.setIdLibro(prestamoMongo.getIdLibro());
         return prestamo;
